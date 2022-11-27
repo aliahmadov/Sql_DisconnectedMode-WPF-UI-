@@ -1,0 +1,64 @@
+﻿<Window x:Class="Disconnected_SQL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Disconnected_SQL"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid ItemsSource="{Binding Authors}" SelectedItem="{Binding SelectedAuthor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGrid>
+
+        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <Button Background="Orange" FontSize="20"
+                    Foreground="White" FontWeight="Bold"
+                    Margin="5" Command="{Binding ShowAllCommand}">
+                Show All
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button Background="Purple" FontSize="20"
+                    Foreground="White" FontWeight="Bold"
+                    Margin="5" Command="{Binding UpdateCommand}">
+                Update
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button Background="Green" FontSize="20"
+                    Foreground="White" FontWeight="Bold"
+                    Margin="5" Command="{Binding InsertCommand}">
+                Insert
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button Background="Red" FontSize="20"
+                    Foreground="White" FontWeight="Bold"
+                    Margin="5" Command="{Binding DeleteCommand}">
+                Delete
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+        
+    </Grid>
+</Window>
