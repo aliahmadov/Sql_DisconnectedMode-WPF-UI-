@@ -160,7 +160,7 @@ namespace Disconnected_SQL.ViewModels
                 }
                 else
                 {
-
+                    MessageBox.Show("No author has been selected");
                 }
             });
 
